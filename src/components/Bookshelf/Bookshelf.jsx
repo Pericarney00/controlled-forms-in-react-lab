@@ -46,10 +46,23 @@ const Bookshelf = () => {
                 onChange={handleInputChange}
               />
           </div>
-          <button type="submit"></button>
+          <button type="submit">Submit New Book</button>
           </form>
         </div>
-      <div className="bookCardsDiv">{/* Book cards will display here */}</div>
+      <div className="bookCardsDiv">
+        
+        {books.map((books, index) => {
+          const {title, author} = books
+          return (
+          
+              <div key="index" className="bookCard">
+                <h3>{title}</h3>
+                <p>by {author}</p>
+              </div>
+          )
+        }
+        )}
+      </div>
     </div>
   );
   
